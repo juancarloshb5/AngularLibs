@@ -6,5 +6,18 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/form-validation/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/form-validation/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/validation-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/validation-lib/tsconfig.spec.json"
+    }
+]
 }

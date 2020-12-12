@@ -2,5 +2,89 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "form-validation": {
+      "projectType": "library",
+      "root": "projects/form-validation",
+      "sourceRoot": "projects/form-validation/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/form-validation/tsconfig.lib.json",
+            "project": "projects/form-validation/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/form-validation/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/form-validation/src/test.ts",
+            "tsConfig": "projects/form-validation/tsconfig.spec.json",
+            "karmaConfig": "projects/form-validation/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/form-validation/tsconfig.lib.json",
+              "projects/form-validation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "validation-lib": {
+      "projectType": "library",
+      "root": "projects/validation-lib",
+      "sourceRoot": "projects/validation-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/validation-lib/tsconfig.lib.json",
+            "project": "projects/validation-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/validation-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/validation-lib/src/test.ts",
+            "tsConfig": "projects/validation-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/validation-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/validation-lib/tsconfig.lib.json",
+              "projects/validation-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": "b7f8a318-22f1-4522-a35b-75bc981a2f98"
+  },
+  "defaultProject": "form-validation"
 }
